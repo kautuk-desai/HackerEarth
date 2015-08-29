@@ -1,0 +1,27 @@
+import java.util.*;
+import java.io.*;
+class easy
+{
+	public static void main(String args[]) throws IOException
+	{
+		BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
+		String number = scan.readLine();
+		int length = number.length();
+		boolean[] count = new boolean[length];
+		int c = 0;
+		int n;
+		for(int i=0;i<length;i++)
+		{
+			n = Integer.parseInt(number.charAt(i)+"");
+			if(n%2 == 0)
+			{
+				c++;
+				count[i] = true;
+			}
+		}
+		for(int i=0;i<length;i++)
+		{
+			System.out.print(((count[i])?c--:c)+" ");
+		}
+	}
+}
