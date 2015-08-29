@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+	long tc=0;
+	long long a=0,b=0,m=0,divb,diva,moda;
+	scanf("%ld",&tc);
+	for(long i=1;i<=tc;i++)
+	{
+		scanf("%lld %lld %lld",&a,&b,&m);
+		
+		divb=(b/m);
+		diva=(a/m);
+		moda=a%m;
+		if(moda==0)
+		{
+			printf("%ld\n",divb-diva+1);
+		}
+		else
+		{
+			printf("%ld\n",(divb-diva));
+		}
+		
+	}
+	return 0;
+}
