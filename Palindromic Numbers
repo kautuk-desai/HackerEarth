@@ -1,0 +1,29 @@
+# include<stdio.h>
+
+int main(){
+int num, r, sum=0, temp;
+int min, max,tc,count=0;
+
+scanf("%d", &tc);
+for(int i=1;i<=tc;i++)
+{
+	scanf("%d %d", &min, &max);
+    for (num = min; num <= max; num++)
+    {
+        temp = num;
+        sum = 0;
+
+        while (temp)
+        {
+            r = temp % 10;
+            temp = temp / 10;
+            sum = sum * 10 + r;
+        }
+        if (num == sum)
+        count++;
+    }  
+            printf("%d\n", count);
+            count=0;
+}
+return 0;
+}
