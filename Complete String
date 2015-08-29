@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace HackerEarth
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            List<string> inputList = new List<string>();
+            int count = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                string input = Console.ReadLine().ToLower();
+                inputList.Add(input);
+            }
+            foreach (string s in inputList)
+            {
+                IEnumerable<char> arr =  s.Distinct<char>();
+
+                foreach (char c in arr)
+                {
+                    if (c >= 'a' && c <= 'z')
+                    {
+                        count++;
+                    }
+                }
+                if (count == 26)
+                {
+                    Console.WriteLine("YES");
+                    count = 0;
+                }
+                else
+                {
+                    Console.WriteLine("NO");
+                    count = 0;
+                }
+            }
+            Console.ReadKey();
+        }       
+    }
+}
