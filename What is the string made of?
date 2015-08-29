@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+
+namespace HackerEarth
+{
+    class string_made_of
+    {
+        static int value = 0;
+        public static void Main(string[] args)
+        {
+            Dictionary<char, int> dict = new Dictionary<char, int>();
+            dict.Add('1', 2);
+            dict.Add('2', 5);
+            dict.Add('3', 5);
+            dict.Add('4', 4);
+            dict.Add('5', 5);
+            dict.Add('6', 6);
+            dict.Add('7', 3);
+            dict.Add('8', 7);
+            dict.Add('9', 6);
+            dict.Add('0', 6);
+            string input = Console.ReadLine();
+            char[] arr = input.ToCharArray();
+
+            foreach(char c in arr)
+            {
+                if(dict.ContainsKey(c))
+                {
+                    value += dict[c];
+                }
+            }
+            Console.WriteLine(value);
+            Console.ReadKey();
+        }
+    }
+}
