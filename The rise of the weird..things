@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+
+class riseOfTheWeird {
+	public static void main(String[] args) throws NumberFormatException, IOException
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int tc=Integer.parseInt(br.readLine());
+		int even=0,odd=0;
+		String ev="",od="";
+		int[] num=new int[tc];
+		String input[]=br.readLine().split(" ");
+		for(int i=0;i<tc;i++)
+		{
+			num[i]=Integer.parseInt(input[i]);
+		}
+		Arrays.sort(num);
+		for(int i=0;i<tc;i++)
+		{
+			if(num[i]%2==0)
+			{
+				ev+=num[i]+" ";
+				even+=num[i];
+			}
+			else
+			{
+				od+=num[i]+" ";
+				odd+=num[i];
+			}
+		}
+		System.out.println(ev+""+even+" "+od+""+odd);
+	}
+}
