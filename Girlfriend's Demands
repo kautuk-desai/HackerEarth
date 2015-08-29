@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+ 
+int main ()
+{
+  string text;
+  getline(cin,text);
+  long len = text.length();
+  long t;
+  long long int a,b;
+  scanf("%ld",&t);
+  for(long i=1;i<=t;i++)
+  {
+	 scanf("%lld %lld", &a, &b);
+	 a--;
+	 b--;
+	 a %= len;
+	 b %= len;
+	 
+	 (text[a] == text[b]) ? printf("Yes\n") : printf("No\n");
+  }
+ 
+  return 0;
+}
