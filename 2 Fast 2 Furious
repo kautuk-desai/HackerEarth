@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+class fastfurious {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+		int cp = Integer.parseInt(br.readLine());
+		String[] dom = br.readLine().split(" ");
+		String[] brian = br.readLine().split(" ");
+		long[] dsd=new long[cp];
+		long[] bsd=new long[cp];
+		for(int i=0;i<cp-1;i++)
+		{
+			dsd[i]=Math.abs(Integer.parseInt(dom[i]) - Integer.parseInt(dom[i+1]));
+		}
+		for(int i=0;i<cp-1;i++)
+		{
+			bsd[i]=Math.abs(Integer.parseInt(brian[i]) - Integer.parseInt(brian[i+1]));
+		}
+		Arrays.sort(dsd);
+		Arrays.sort(bsd);
+		if(dsd[cp-1] > bsd[cp-1])
+		{
+			System.out.println("Dom");
+			System.out.println(dsd[cp-1]);
+		}
+		else if(bsd[cp-1] > dsd[cp-1])
+		{
+			System.out.println("Brian");
+			System.out.println(bsd[cp-1]);
+		}
+		else
+			System.out.println("Tie");
+	}
+}
