@@ -1,0 +1,57 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+ 
+public class PromNight {
+ 
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int i,j;
+		int yes=0;
+		int tc = Integer.parseInt(br.readLine());
+		for(int t=1;t<=tc;t++)
+		{
+			String[] count=br.readLine().split(" ");
+			int m = Integer.parseInt(count[0]);
+			int n= Integer.parseInt(count[1]);
+			String[] male=br.readLine().split(" ");
+			String[] female=br.readLine().split(" ");
+			int[] male1=new int[m];
+			int[] female1=new int[n];
+			if(n>=m)
+			{
+				for(i=0;i<m;i++)
+				{
+					male1[i]=Integer.parseInt(male[i]);
+				}
+				for(j=0;j<n;j++)
+				{
+					female1[j]=Integer.parseInt(female[j]);
+				}
+				Arrays.sort(male1);
+				Arrays.sort(female1);
+				i=0;j=0;yes=0;
+				while(i<m && j<n)
+				{
+					if(male1[i]>female1[j])
+					{
+						i++;
+						j++;
+						yes++;
+					}
+					else
+					{
+						break;
+					}
+				}
+				if(yes==m)
+				System.out.println("YES");
+				else
+					System.out.println("NO");
+			}
+			else
+				System.out.println("NO");
+		}
+	}
+}
