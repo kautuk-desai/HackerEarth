@@ -1,0 +1,28 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+class KaranAndStrings {
+
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int tc = Integer.parseInt(br.readLine());
+        for(int i=1;i<=tc;i++)
+        {
+            String input = br.readLine();
+            String temp=new String();
+            temp="";
+            for(int j=input.length()-1;j-1>=0;j--)
+            {
+                if(input.charAt(j) != input.charAt(j-1))
+                {
+                    temp+=input.charAt(j)+"";
+                }
+            }
+            temp+=input.charAt(0)+"";
+            String op = new StringBuffer(temp.toString()).reverse().toString();
+            System.out.println(op);
+        }
+    }
+}
